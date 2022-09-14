@@ -110,7 +110,7 @@ class Disparo(Sprite):
 
 class Barravidaminicell(Sprite):
 	def __init__(self):
-		self.image = barradevidacell = pygame.image.load("Imagenes/barradevidaminicell.png").convert_alpha()
+		self.image = Barravidaminicell = pygame.image.load("Imagenes/barravidaminicell.png").convert_alpha()
 		self.rect = self.image.get_rect()
 		self.rect.move_ip(612, 4)
 	def update(self):
@@ -148,19 +148,19 @@ if __name__ == '__main__':
 	minicell = Minicell()
 	disparo = Disparo()
 	barravidagoku = Barravidagoku()
-	barradevidacell = Barravidaminicell()
+	barravidaminicell = Barravidaminicell()
 
 	# Movimiento del goku.
 	while not salir:
 		goku.update()
 		kamehameha.update()
-		if barradevidacell.rect.x < 697:
+		if barravidaminicell.rect.x < 697:
 			minicell.update()
 		else:
 			minicell.dificil()
 		disparo.update()
 		barravidagoku.update()
-		barradevidacell.update()
+		barravidaminicell.update()
 
 		# actualizacion grafica
 		screen.blit(fondo, (0, 0))
@@ -169,7 +169,7 @@ if __name__ == '__main__':
 		screen.blit(minicell.image, minicell.rect)
 		screen.blit(disparo.image, disparo.rect)
 		screen.blit(barravidagoku.image, barravidagoku.rect)
-		screen.blit(barradevidacell.image, barradevidacell.rect)
+		screen.blit(barravidaminicell.image, barravidaminicell.rect)
 		screen.blit(cuadrovidagoku, (0,0))
 		screen.blit(cuadrovidaminicell, (608,0))
 		if goku.muerto == 1:
